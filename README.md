@@ -31,8 +31,8 @@ Only include `write_inventory` if you want the **Update Shopify** button.
 4. Fill in:
 
 ```text
-SHOPIFY_API_KEY= 59081b6dfc7d274561f3311d434cbe43
-SHOPIFY_API_SECRET= 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
+SHOPIFY_API_KEY=
+SHOPIFY_API_SECRET= 
 HOST=
 ```
 
