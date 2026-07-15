@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>BSS Stocktake for Shopify</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Shopify inventory</p>
+        <h1>BSS Stocktake</h1>
+      </div>
+      <button id="connectButton" type="button">Connect</button>
+    </header>
+
+    <main>
+      <section class="status-strip">
+        <div>
+          <span class="label">Lines</span>
+          <strong id="lineCount">0</strong>
+        </div>
+        <div>
+          <span class="label">Variances</span>
+          <strong id="varianceCount">0</strong>
+        </div>
+        <div>
+          <span class="label">Saved</span>
+          <strong id="savedStatus">Ready</strong>
+        </div>
+      </section>
+
+      <section class="scanner-panel">
+        <div class="video-frame">
+          <video id="camera" playsinline muted></video>
+          <div class="scan-guide" aria-hidden="true"></div>
+          <p class="camera-note" id="cameraNote">Connect your Shopify store, then scan a barcode.</p>
+        </div>
+        <div class="scan-actions">
+          <button class="primary" id="scanButton" type="button">Start Scan</button>
+          <button id="stopButton" type="button" disabled>Stop</button>
+        </div>
+      </section>
+
+      <section class="entry-panel">
+        <label>
+          Shopify store domain
+          <input id="shopInput" autocomplete="off" placeholder="your-store.myshopify.com" />
+        </label>
+        <label>
+          Location
+          <select id="locationInput"></select>
+        </label>
+        <label>
+          Barcode or SKU
+          <input id="barcodeInput" autocomplete="off" inputmode="text" placeholder="Scan or type code" />
+        </label>
+        <div class="lookup-result" id="lookupResult">No Shopify item selected.</div>
+        <label>
+          Counted quantity
+          <input id="qtyInput" inputmode="numeric" min="0" type="number" value="1" />
+        </label>
+        <button class="primary full" id="addButton" type="button">Add Count</button>
+      </section>
+
+      <section class="toolbar">
+        <button id="saveButton" type="button">Save Stocktake</button>
+        <button id="downloadButton" type="button">Download CSV</button>
+        <button id="emailButton" type="button">Email CSV</button>
+        <button id="applyButton" type="button">Update Shopify</button>
+      </section>
+
+      <section class="list-section">
+        <h2>Counted stock</h2>
+        <div class="empty-state" id="emptyState">
+          <strong>No Shopify stock counted yet</strong>
+          <span>Scan or type a barcode/SKU.</span>
+        </div>
+        <div class="stock-list" id="stockList"></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/vendor/zxing-browser.min.js"></script>
+    <script src="/shopify-scanner.js"></script>
+  </body>
+</html>

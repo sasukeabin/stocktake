@@ -1,0 +1,18 @@
+name = "BSS Stocktake"
+client_id = "replace_with_partner_app_client_id"
+application_url = "https://your-app-host.example.com"
+embedded = true
+
+[access_scopes]
+scopes = "read_products,read_inventory,write_inventory"
+
+[auth]
+redirect_urls = [
+  "https://your-app-host.example.com/auth/callback"
+]
+
+[webhooks]
+api_version = "2026-07"
+
+[pos]
+embedded = false

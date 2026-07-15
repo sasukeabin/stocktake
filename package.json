@@ -1,0 +1,19 @@
+{
+  "name": "bss-shopify-stocktake",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "@shopify/shopify-api": "^11.0.0",
+    "@shopify/shopify-app-session-storage-sqlite": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
