@@ -1,6 +1,6 @@
 name = "BSS Stocktake"
-client_id = "replace_with_partner_app_client_id"
-application_url = "https://your-app-host.example.com"
+client_id = "59081b6dfc7d274561f3311d434cbe43"
+application_url = "https://stocktake-a5sq.onrender.com"
 embedded = true
 
 [access_scopes]
@@ -8,7 +8,7 @@ scopes = "read_products,read_inventory,write_inventory"
 
 [auth]
 redirect_urls = [
-  "https://your-app-host.example.com/auth/callback"
+  "https://stocktake-a5sq.onrender.com/auth/callback"
 ]
 
 [webhooks]
